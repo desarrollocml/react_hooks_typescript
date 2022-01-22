@@ -5,6 +5,7 @@ export default function Counter() {
 
   const incrementar = (numero:number=1):void=>{
     setCounter(counter+numero);
+    
   }
   
   return (
