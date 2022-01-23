@@ -1,5 +1,6 @@
 import ContadorRed from "./components/ContadorRed";
 import Counter from "./components/Counter";
+import Formulario from "./components/Formulario";
 import TimerPadre from "./components/TimerPadre";
 import Usuario from "./components/Usuario";
 
@@ -17,6 +18,14 @@ function App() {
       <h3>useReducer</h3>
       <hr/>
       <ContadorRed/>
+      <hr/>
+      <Formulario/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+     
     </>
   );
 }
