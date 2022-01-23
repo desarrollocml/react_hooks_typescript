@@ -1,17 +1,17 @@
-import React, { ChangeEvent, useState } from "react";
+import { useForm } from "../hooks/useForm";
 
+interface FormData {
+    email:string;
+    nombre:string;
+    edad:number
+}
 export default function Formulario() {
-  const [formulario, setFormulario] = useState({
-    email: "",
-    nombre: "",
+  const { formulario, handleChange } = useForm<FormData>({
+    email: "cml@gmail.com",
+    nombre: "juan perez",
+    edad:35,
   });
-  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = target;
-    setFormulario({
-      ...formulario,
-      [name]: value,
-    });
-  };
+  const {email,nombre,edad}=formulario;
   return (
     <>
       <form autoComplete="off">
@@ -24,12 +24,29 @@ export default function Formulario() {
             /* onChange={(ev) => handleChange(ev)}
             //si (ev) o cualquier arg esta en el paso a las dos funcines 
             se puede no colocar */
+            value={email}
             onChange={handleChange}
           />
         </div>
         <div>
           <label className="form-label">Nombre:</label>
-          <input type="text" name="nombre" className="form-control" onChange={handleChange} />
+          <input
+            type="text"
+            name="nombre"
+            className="form-control"
+            value={nombre}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label className="form-label">Edad:</label>
+          <input
+            type="number"
+            name="edad"
+            className="form-control"
+            value={edad}
+            onChange={handleChange}
+          />
         </div>
         <pre>{JSON.stringify(formulario)}</pre>
       </form>
