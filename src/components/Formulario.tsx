@@ -5,9 +5,12 @@ export default function Formulario() {
     email: "",
     nombre: "",
   });
-  const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
-    console.log(ev.target.name);
-    console.log(ev.target.value);
+  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = target;
+    setFormulario({
+      ...formulario,
+      [name]: value,
+    });
   };
   return (
     <>
@@ -21,12 +24,12 @@ export default function Formulario() {
             /* onChange={(ev) => handleChange(ev)}
             //si (ev) o cualquier arg esta en el paso a las dos funcines 
             se puede no colocar */
-             onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <div>
           <label className="form-label">Nombre:</label>
-          <input type="text" name="nombre" className="form-control" />
+          <input type="text" name="nombre" className="form-control" onChange={handleChange} />
         </div>
         <pre>{JSON.stringify(formulario)}</pre>
       </form>
