@@ -10,7 +10,7 @@ export default function Counter() {
   
   return (
     <div className="mt-5">
-      <h3>Counter : useState</h3>
+      <h3>Counter :</h3>
       <span>Counter : {counter}</span>
       <br/>
       <button onClick={()=>incrementar()} className="btn btn-outline-primary mt-2">
