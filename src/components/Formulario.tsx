@@ -6,12 +6,12 @@ interface FormData {
     edad:number
 }
 export default function Formulario() {
-  const { formulario, handleChange } = useForm<FormData>({
+  const { nombre,email,edad, formulario, handleChange } = useForm<FormData>({
     email: "cml@gmail.com",
     nombre: "juan perez",
     edad:35,
   });
-  const {email,nombre,edad}=formulario;
+  //const {email,nombre,edad}=formulario;
   return (
     <>
       <form autoComplete="off">
