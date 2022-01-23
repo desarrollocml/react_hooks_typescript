@@ -4,6 +4,8 @@ type TimerArgs = {
   milisegundos: number;
 };
 
+
+
 export default function Timer({ milisegundos }: TimerArgs) {
   const [segundos, setSegundos] = useState(0);
   const ref = useRef<NodeJS.Timeout>();

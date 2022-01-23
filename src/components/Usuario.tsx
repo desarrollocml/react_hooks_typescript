@@ -14,8 +14,8 @@ export default function Usuario() {
         })
     }
   return (
-    <div className="mt-5">
-        <h3>Usuario:</h3>
+    <div className="mt-1">
+        <h4>Usuario:</h4>
         <button 
         onClick={login}
         className="btn btn-outline-primary">
